@@ -1,0 +1,79 @@
+.result {
+  width: 100%;
+
+  &-item {
+      width: 100%;
+      margin-bottom: 20px;
+      border-bottom: solid 1px $color-tinybeans-theme;
+
+      &__chart,
+      &__counter,
+      &__label {
+          margin-bottom: 6px;
+      }
+
+      &__chart-inner {
+          // height: 30px !important;
+          min-height: 30px;
+          background-color: $color-tinybeans-theme;
+
+          &.fill1 {
+              background-color: $color-option1;
+          }
+
+          &.fill2 {
+              background-color: $color-option2;
+          }
+
+          &.fill3 {
+              background-color: $color-option3;
+          }
+
+          &.fill4 {
+              background-color: $color-option4;
+          }
+
+          &.fill5 {
+              background-color: $color-option5;
+          }
+      }
+
+      &__counter {
+          font-weight: bold;
+      }
+  }
+}
+
+@media (min-width: 48em) {
+  .result {
+    display: flex;
+    height: 400px;
+
+    &-item {
+        width: 20%;
+        height: 100%;
+        border: none;
+
+        &__chart {
+            width: 80%;
+            height: calc(100% - 66px);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            .result-item__counter {
+                text-align: center;
+            }
+
+            &-inner {
+                width: 100% !important;
+            }
+        }
+
+        &__label {
+            width: 80%;
+            text-align: center;
+        }
+    }
+  }
+}

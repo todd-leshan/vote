@@ -1,0 +1,27 @@
+@media (min-width: 48em) {
+    .header,
+    .footer {
+        &__inner {
+            padding-left: 50px;
+            padding-right: 50px;
+            margin: auto;
+        }
+    }
+    .content-wrapper {
+        width: 100%;
+
+        &.loading {
+            &::before {
+                top: 40%;
+                left: 48%;
+                transform: translate(-48%, -40%);
+            }
+        }
+        
+        &__inner {
+            max-width: 75%;
+            margin: auto;
+            padding: 50px;
+        }
+    }
+}

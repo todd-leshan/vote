@@ -1,0 +1,12 @@
+.error {
+  font-weight: bold;
+  font-size: 16px;
+  color: $color-tinybeans-theme;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 48em) {
+  .error {
+    font-size: 20px;
+  }
+}

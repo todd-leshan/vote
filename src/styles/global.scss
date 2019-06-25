@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root,
+.content-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    font-family: "Open Sans", sans-serif;
+    font-size: $base-font-size;
+    font-weight: 400;
+    background-color: $color-tinybeans-bg;
+    color: $color-tinybeans-text;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.header,
+.footer {
+    background-color: $color-tinybeans-banner;
+    background-color: rgba(251, 251, 233, 0.75);
+    -webkit-box-shadow: 0px 5px 3px 0px rgba(251, 251, 233, 0.85);
+    -moz-box-shadow: 0px 5px 3px 0px rgba(251, 251, 233, 0.85);
+    box-shadow: 0px 5px 3px 0px rgba(251, 251, 233, 0.85);
+    &__inner {
+        padding: 20px;
+    }
+}
+
+.footer {
+    &__inner {
+        text-align: center;
+    }
+}
+
+main {
+    height: calc(100% - 151px);
+}
+
+.content-wrapper {
+    
+    &__inner {
+        padding: 20px;
+    }
+
+    &.loading {
+        position: relative;
+
+        &::before,
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+        }
+
+        &::before {
+            z-index: 10;
+            top: 40%;
+            left: 45%;
+            transform: translate(-45%, -40%);
+            border: 8px solid white;
+            border-radius: 50%;
+            border-top: 8px solid $color-tinybeans-theme;
+            width: 60px;
+            height: 60px;
+            -webkit-animation: spin 2s linear infinite; /* Safari */
+            animation: spin 2s linear infinite;
+        }
+
+        &::after {
+            z-index: 9;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+          
+          /* Safari */
+        @-webkit-keyframes spin {
+        0% { -webkit-transform: rotate(0deg); }
+        100% { -webkit-transform: rotate(360deg); }
+        }
+          
+        @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+        }
+    }
+}
+
+h2, h3 {
+    margin-bottom: 20px;
+}
+
+@import "elements/button.scss";
+@import "elements/form.scss";
+@import "elements/errorMsg.scss";
+@import "elements/result.scss";
+

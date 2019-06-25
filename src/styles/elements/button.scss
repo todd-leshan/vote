@@ -1,0 +1,25 @@
+.btn {
+  padding: 12px 28px;
+  font-size: $base-font-size;
+  font-weight: bold;
+  text-transform: capitalize;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &.btn--orange {
+      color: $color-tinybeans-bg;
+      background-color: $color-tinybeans-theme;
+  }
+
+  &:hover,
+  &:focus {
+      color: $color-tinybeans-text;
+  }
+
+  &:disabled {
+      opacity: 0.5;
+      cursor: none;
+      pointer-events: none;
+  }
+} 
