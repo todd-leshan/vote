@@ -1,5 +1,5 @@
 ### Prerequisite:
-  node version > 8.12
+ node version > 8.12
 
 ### How to run:
   * run 'npm install'
