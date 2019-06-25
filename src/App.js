@@ -47,16 +47,13 @@ class App extends Component {
     this.handleLoadingStatus();
     postVote(selectedOption, this.cancelToken)
       .then(res => {
-        this.setState({
-          isLoading: false
-        });
-
         return getResult(this.cancelToken);
       })
       .then((res) => {
         this.setState({
+          isLoading: false,
           results: res,
-          showResult: true
+          showResult: true,
         });
       })
       .catch(err => {
