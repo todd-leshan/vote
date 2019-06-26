@@ -12,6 +12,13 @@
       background-color: $color-tinybeans-theme;
   }
 
+  &.btn--white {
+      &:hover,
+      &:focus {
+          color: $color-tinybeans-theme;
+      }
+  }
+
   &:hover,
   &:focus {
       color: $color-tinybeans-text;
@@ -21,5 +28,9 @@
       opacity: 0.5;
       cursor: none;
       pointer-events: none;
+  }
+
+  & ~ .btn {
+      margin-left: 30px;
   }
 } 

@@ -61,6 +61,21 @@ class App extends Component {
       });
   }
 
+  viewResult = () => {
+    this.handleLoadingStatus();
+    getResult(this.cancelToken)
+    .then((res) => {
+      this.setState({
+        isLoading: false,
+        results: res,
+        showResult: true,
+      });
+    })
+    .catch(err => {
+      this.handleError(err);
+    });
+  }
+
   handleLoadingStatus = () => {
     this.setState({
       isLoading: true
@@ -107,6 +122,7 @@ class App extends Component {
                 question={this.state.question}
                 choices={this.state.choices}
                 onVote={this.submitVote}
+                onViewResult={this.viewResult}
               />)
           }
         </div>

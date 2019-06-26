@@ -55,6 +55,12 @@ class Question extends Component {
                             classes='btn btn--orange'
                             disabled={!this.state.hasSelectedOption}
                         />
+                        <Button 
+                            type='button'
+                            value='view result'
+                            classes='btn btn--orange'
+                            onClick={this.props.onViewResult}
+                        />
                     </div>
                 </fieldset>
             </form>
@@ -66,6 +72,7 @@ Question.propTypes = {
     question: PropTypes.string.isRequired,
     choices: PropTypes.object.isRequired,
     onVote: PropTypes.func.isRequired,
+    onViewResult: PropTypes.func.isRequired,
 };
 
 export default Question;

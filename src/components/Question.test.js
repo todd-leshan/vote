@@ -10,11 +10,13 @@ describe('Question', () => {
       2: 'option 2'
     };
     const onVote = () => {};
+    const onViewResult = () => {};
 
     const wrapper = shallow(<Question 
       question={question}
       choices={choices}
       onVote={onVote}
+      onViewResult={onViewResult}
     />);
 
     const questionLegend = wrapper.find('legend');
@@ -23,7 +25,7 @@ describe('Question', () => {
     const questionOptions = wrapper.find('QuestionOption');
     expect(questionOptions.length).toEqual(2);
 
-    const voteButton = wrapper.find('Button');
+    const voteButton = wrapper.find('Button').filterWhere(node => node.prop('value') === 'vote');
     expect(voteButton.prop('disabled')).toBeTruthy();
   });
 
@@ -34,11 +36,13 @@ describe('Question', () => {
       2: 'option 2'
     };
     const onVote = jest.fn();
+    const onViewResult = jest.fn();
 
     const wrapper = shallow(<Question 
       question={question}
       choices={choices}
       onVote={onVote}
+      onViewResult={onViewResult}
     />);
 
     const option1 = wrapper.find('QuestionOption#option-1');
@@ -48,7 +52,7 @@ describe('Question', () => {
 
     wrapper.update();
 
-    const button = wrapper.find('Button');
+    const button = wrapper.find('Button').filterWhere(node => node.prop('value') === 'vote');
 
     expect(button.prop('disabled')).toBeFalsy();
 
